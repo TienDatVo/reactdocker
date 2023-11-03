@@ -1,0 +1,14 @@
+version: "2"
+services:
+  frontend:
+    stdin_open: true
+    tty: true
+    container_name: my-react-app-1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
